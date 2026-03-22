@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body, #root {
+    height: 100%;
+    background-color: #0a0b0f;
+    color: #e8eaf0;
+    font-family: 'Syne', sans-serif;
+  }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #3a3f52; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #6b7280; }
+  textarea, input { outline: none; font-family: inherit; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-br from-vault-accent to-vault-accent2 text-white font-semibold
+           rounded-xl px-5 py-2.5 transition-opacity hover:opacity-90 cursor-pointer border-0 text-sm
+           active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-vault-card border border-vault-border text-vault-muted font-medium
+           rounded-xl px-4 py-2.5 transition-all hover:text-vault-text cursor-pointer text-sm;
+  }
+  .vault-input {
+    @apply w-full bg-vault-card border border-vault-border rounded-xl px-4 py-2.5
+           text-vault-text text-sm focus:border-vault-accent transition-colors
+           placeholder:text-vault-muted;
+  }
+  .enc-pulse {
+    animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; }
+    50%      { opacity:0.35; }
+  }
+}
