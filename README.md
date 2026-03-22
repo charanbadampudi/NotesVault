@@ -27,4 +27,3 @@ npm run dev
 Open http://localhost:5173
 
 ## No AWS needed — notes are stored encrypted in MongoDB.
-"# NotesVault" 
